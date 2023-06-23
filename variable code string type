@@ -1,0 +1,15 @@
+provider "aws" {
+region = "ap-south-1"
+}
+resource "aws_instance" "example" {
+ ami = "ami-057752b3f1d6c4d6c"
+instance_type = var.instance_type
+  tags = {
+    Name = "guru"
+  }
+}
+variable "instance_type" {
+description = "this is used to given instance"
+type  = string
+default = "t2.medium"
+}
